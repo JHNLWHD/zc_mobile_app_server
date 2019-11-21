@@ -1,0 +1,19 @@
+{
+    "name": "zc_mobile_app_server",
+    "version": "1.0.0",
+    "description": "A backend api for Zamboanga Mobile and Web App.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": {
+        "email": "aljhoenilw@gmail.com",
+        "name": "Al-Jhoenil D. Wahid",
+        "url": "https://www.linkedin.com/in/al-jhoenil-wahid-03b981121/"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
