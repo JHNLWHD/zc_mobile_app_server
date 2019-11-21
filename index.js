@@ -14,3 +14,9 @@ app.get('/', (req, res) => res.send('Succesful listening on backend api.'));
 app.listen(port, function () {
      console.log("Running api on port " + port);
 });
+
+// Import routes
+let routes = require("./routes")
+
+// Use Api routes in the App
+app.use('/api', routes)
