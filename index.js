@@ -9,16 +9,21 @@ const app = express();
 // Setup server port
 const port = process.env.PORT || 8080;
 
-// Send message for default URL
-app.get('/', (req, res) => res.send({ message: "Welcome to ILoveZamboanga application." }));
+// parse requests of content-type: application/json
+app.use(bodyParser.json());
 
-// Launch app to listen to specified port
-app.listen(port, function () {
-     console.log("Running api on port " + port);
+// parse requests of content-type: application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to ILoveZamboanga application." });
 });
 
-// Import routes
-let routes = require("./routes")
+require("./routes/place.routes.js")(app);
 
-// Use Api routes in the App
-app.use('/api', routes)
+// set port, listen for requests
+app.listen(port, () => {
+  console.log("Server is running on port.");
+});
+
