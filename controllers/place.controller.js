@@ -65,7 +65,7 @@ exports.update = (req, res) => {
     // Validate Request
     if (!req.body) {
         res.status(400).send({
-            message: "Content can not be empty!"
+          message: "Content can not be empty!"
         });
     }
 
@@ -76,11 +76,11 @@ exports.update = (req, res) => {
         if (err) {
         if (err.kind === "not_found") {
             res.status(404).send({
-            message: `Not found Place with id ${req.params.placeId}.`
+              message: `Not found Place with id ${req.params.placeId}.`
             });
         } else {
             res.status(500).send({
-            message: "Error updating Place with id " + req.params.placeId
+              message: "Error updating Place with id " + req.params.placeId
             });
         }
         } else res.send(data);
