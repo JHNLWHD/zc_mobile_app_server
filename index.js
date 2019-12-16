@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 require("./routes/place.routes.js")(app);
+require("./routes/job.routes.js")(app);
 
 // set port, listen for requests
 app.listen(port, () => {
