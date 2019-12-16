@@ -1,6 +1,6 @@
 const Job = require("../models/job.model.js");
 
-// Create and Save a new Places
+// Create and Save a new Job
 exports.create = (req, res) => {
     // Validate request
     if (!req.body) {
