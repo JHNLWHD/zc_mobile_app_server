@@ -1,16 +1,29 @@
 // Import express
-let express = require('express');
+const express = require('express');
+// Import body parser
+const bodyParser = require("body-parser");
 
 // Initialize the app
-let app = express();
+const app = express();
 
 // Setup server port
-var port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
-// Send message for default URL
-app.get('/', (req, res) => res.send('Succesful listening on backend api.'));
+// parse requests of content-type: application/json
+app.use(bodyParser.json());
 
-// Launch app to listen to specified port
-app.listen(port, function () {
-     console.log("Running api on port " + port);
+// parse requests of content-type: application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to ILoveZamboanga application." });
 });
+
+require("./routes/place.routes.js")(app);
+
+// set port, listen for requests
+app.listen(port, () => {
+  console.log("Server is running on port.");
+});
+
