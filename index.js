@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 require("./routes/place.routes.js")(app);
 require("./routes/job.routes.js")(app);
 require("./routes/office.routes.js")(app);
+require("./routes/government_directory.routes.js")(app);
 
 // set port, listen for requests
 app.listen(port, () => {

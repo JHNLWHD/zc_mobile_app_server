@@ -86,7 +86,7 @@ exports.update = (req, res) => {
 
 // Delete a Job with the specified JobId in the request
 exports.delete = (req, res) => {
-    Place.remove(req.params.jobId, (err, data) => {
+    Job.remove(req.params.jobId, (err, data) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
